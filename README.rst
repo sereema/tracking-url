@@ -35,6 +35,7 @@ Usage
 Thanks
 ======
 This code is a simple python port of the identically named node module.
+
 Big thanks to https://github.com/wankdanker for the original code and
 research.
 
