@@ -1,0 +1,4 @@
+[run]
+parallel = True
+source = tracking_url
+omit = tracking_url/tests/*

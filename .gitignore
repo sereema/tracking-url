@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# coverage
+.coverage
+htmlcov/
+
+# setuptools
+MANIFEST
+build/
+dist/
+tracking_url.egg-info/
+
+# PyCharm
+.idea/
