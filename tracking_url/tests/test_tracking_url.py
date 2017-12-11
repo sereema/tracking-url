@@ -47,6 +47,8 @@ class GuessCarrierTestCase(TestCase):
 
     def test_usps(self):
         # from: https://tools.usps.com/go/TrackConfirmAction!input.action
+        # and: https://www.trackingmore.com/usps-tracking.html
+        # and: https://github.com/sereema/tracking-url/issues/1
         self.check_carrier('usps', [
             '9407 1000 0000 0000 0000 00',
             '7000 0000 0000 0000 0000',
@@ -62,7 +64,9 @@ class GuessCarrierTestCase(TestCase):
             '9202 1000 0000 0000 0000 00',
             '2300 0000 0000 0000 0000',
             '9400 1000 0000 0000 0000 00',
-            '0300 0000 0000 0000 0000'
+            '0300 0000 0000 0000 0000',
+            '92748999984327000003259997',
+            '924 199 021 185 965 130 000 532 72',
         ])
 
     def test_dhl(self):

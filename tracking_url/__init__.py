@@ -55,7 +55,8 @@ TRACKING_PATTERNS = [
             r'(\b\d{30}\b)|(\b91\d+\b)|(\b\d{20}\b)',
             r'^E\D{1}\d{9}\D{2}$|^9\d{15,21}$',
             r'^91[0-9]+$',
-            r'^[A-Za-z]{2}[0-9]+US$'
+            r'^[A-Za-z]{2}[0-9]+US$',
+            r'^\d{26}$',
         ]
     ),
     TrackingPattern(
