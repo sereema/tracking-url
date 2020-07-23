@@ -60,6 +60,15 @@ TRACKING_PATTERNS = [
         ]
     ),
     TrackingPattern(
+        'chronopost',
+        'https://www.chronopost.fr/tracking-no-cms/suivi-page?listeNumerosLT={tracking_number}',
+        [
+            r'[A-Za-z]{2}[0-9]{9}[A-Za-z]{2}',
+            # These one seem to be when chronopost uses geodis :
+            r'[A-Za-z]{2}[0-9]{12}[A-Za-z]',
+        ]
+    ),
+    TrackingPattern(
         'dhl',
         'http://www.dhl.com/en/express/tracking.html?AWB={tracking_number}&brand=DHL',
         [
