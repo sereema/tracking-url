@@ -6,7 +6,7 @@ Detect package carrier from tracking number and generate tracking url.
 ============
 Requirements
 ============
-* python >= 3.2
+* python >= 3.4
 
 ============
 Installation
