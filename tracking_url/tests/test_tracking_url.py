@@ -7,8 +7,10 @@ class GuessCarrierTestCase(TestCase):
     def check_carrier(self, expected_carrier, tracking_numbers):
         for tracking_number in tracking_numbers:
             match = guess_carrier(tracking_number)
-            self.assertIsNotNone(match, tracking_number)
-            self.assertEqual(expected_carrier, match.carrier)
+            self.assertIsNotNone(match, msg='`{}` did not match {}'.format(tracking_number, expected_carrier))
+            self.assertEqual(
+                expected_carrier, match.carrier,
+                msg='`{}` matched {} instead of {}'.format(tracking_number, match.carrier, expected_carrier))
 
     def test_ups(self):
         # from: https://docs.rocketship.it/php/1-0/tracking-shipments.html
