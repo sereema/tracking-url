@@ -85,3 +85,21 @@ class GuessCarrierTestCase(TestCase):
         self.check_carrier('dhl', [
             '8564385550'
         ])
+
+    def test_purolator(self):
+        # from: https://www.trackingmore.com/tracking-status-detail-en-254.html
+        self.check_carrier('purolator', [
+            '332359073811',
+            '331426749957',
+            'KYV009956937',
+            'CGK002986959',
+            '331434972567',
+            '331435738942',
+            'JFV247545960',
+            'JFV247698458',
+            '331434463120',
+            '331432270063',
+            '331433946802',
+            'TLR000083964',
+            '331432012770',
+        ])
