@@ -90,8 +90,8 @@ TRACKING_PATTERNS = [
         'DHL',
         'https://www.dhl.com/en/express/tracking.html?AWB={tracking_number}&brand=DHL',
         [
-            r'JD{18}',
-            r'JJD{13}',
+            r'JD\d{18}',
+            r'JJD\d{13}',
             r'\d{10,11}'
         ])
 ]
