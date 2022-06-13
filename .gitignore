@@ -12,6 +12,7 @@ MANIFEST
 build/
 dist/
 tracking_url.egg-info/
+.tox
 
 # PyCharm
 .idea/
