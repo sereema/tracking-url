@@ -72,14 +72,6 @@ class GuessCarrierTestCase(TestCase):
             '924 199 021 185 965 130 000 532 72',
         ])
 
-    def test_chronopost(self):
-        # from: https://www.chronopost.fr/en/delivery/our-services/parcel-tracking
-        # also from experimental results
-        self.check_carrier('chronopost', [
-            'XU023645000FR',
-            'XY769000640200Y'
-        ])
-
     def test_dhl(self):
         # from: https://xmlpi-validation.dhl.com/serviceval/jsps/main/Main_menu.jsp
         self.check_carrier('dhl', [
@@ -102,4 +94,22 @@ class GuessCarrierTestCase(TestCase):
             '331433946802',
             'TLR000083964',
             '331432012770',
+        ])
+
+    def test_australia_post(self):
+        # from: https://www.trackingmore.com/australia-post-tracking.html
+        # and: D2D test orders
+        self.check_carrier('australia_post', [
+            'LH211265976AU',  # normal Australia Post tracking ID
+            'PF8102906901000935003',  # shipped by Parcel Freight Logistics, URL works the same
+            'PF8102748601000935000',
+            'PF8102773201000965005',
+        ])
+
+    def test_royal_mail(self):
+        # from: https://www.royalmail.com/royal-mail-you/intellectual-property-rights/linking-our-website
+        # and: https://www.trackingmore.com/royal-mail-tracking.html
+        self.check_carrier('royal_mail', [
+            'ZW924750388GB',
+            'QP922433396GB',
         ])

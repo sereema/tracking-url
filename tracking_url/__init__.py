@@ -76,16 +76,6 @@ TRACKING_PATTERNS = [
         ]
     ),
     TrackingPattern(
-        'chronopost',
-        'Chronopost',
-        'https://www.chronopost.fr/tracking-no-cms/suivi-page?listeNumerosLT={tracking_number}',
-        [
-            r'[A-Za-z]{2}\d{9}[A-Za-z]{2}',
-            # These one seem to be when chronopost uses geodis :
-            r'[A-Za-z]{2}\d{12}[A-Za-z]',
-        ]
-    ),
-    TrackingPattern(
         'dhl',
         'DHL',
         'https://www.dhl.com/en/express/tracking.html?AWB={tracking_number}&brand=DHL',
@@ -93,5 +83,22 @@ TRACKING_PATTERNS = [
             r'JD\d{18}',
             r'JJD\d{13}',
             r'\d{10,11}'
-        ])
+        ]),
+    TrackingPattern(
+        'australia_post',
+        'Australia Post',
+        'https://auspost.com.au/mypost/track/#/details/{tracking_number}',
+        [
+            r'PF\d{19}',
+            r'[A-Za-z]{2}\d{9}AU',
+        ]
+    ),
+    TrackingPattern(
+        'royal_mail',
+        'Royal Mail',
+        'https://www.royalmail.com/track-your-item#/tracking-results/{tracking_number}',
+        [
+            r'[A-Za-z]{2}\d{9}GB',
+        ]
+    ),
 ]
