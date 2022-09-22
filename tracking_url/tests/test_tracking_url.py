@@ -21,8 +21,12 @@ class GuessCarrierTestCase(TestCase):
             '1Z12345E0393657226',
             '1Z12345E1392654435',
             '1Z12345E6892410845',
-            '1Z12345E1591910450'
-        ])
+            '1Z12345E1591910450',
+        # Based on https://www.ups.com/ci/en/help-center/sri/tracking-number.page
+            'T1234567890',
+            '123456789',
+            '123456789012345678',
+        ] + [ 'MI123456' + 'A'*i for i in range(1, 23) ])
 
     def test_fedex(self):
         # from: https://stackoverflow.com/questions/11049025/how-can-i-get-fedex-testing-tracking-number

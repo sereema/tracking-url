@@ -48,7 +48,12 @@ TRACKING_PATTERNS = [
         'UPS',
         'https://wwwapps.ups.com/WebTracking/track?track=yes&trackNums={tracking_number}',
         [
-            r'1Z[0-9A-Z]{16}|[\dT]\d{10}'
+            r'1Z[0-9A-Z]{16}|[\dT]\d{10}',
+            r'T\d{10}',
+            r'\d{9}',
+            r'\d{18}',
+            r'MI[\d]{6}[a-zA-Z0-9]{1,22}',
+            # r'\d{12}', # matches a fedex pattern; here for reference
         ]),
     TrackingPattern(
         'fedex',
