@@ -21,8 +21,12 @@ class GuessCarrierTestCase(TestCase):
             '1Z12345E0393657226',
             '1Z12345E1392654435',
             '1Z12345E6892410845',
-            '1Z12345E1591910450'
-        ])
+            '1Z12345E1591910450',
+        # Based on https://www.ups.com/ci/en/help-center/sri/tracking-number.page
+            'T1234567890',
+            '123456789',
+            '123456789012345678',
+        ] + [ 'MI123456' + 'A'*i for i in range(1, 23) ])
 
     def test_fedex(self):
         # from: https://stackoverflow.com/questions/11049025/how-can-i-get-fedex-testing-tracking-number
@@ -72,16 +76,44 @@ class GuessCarrierTestCase(TestCase):
             '924 199 021 185 965 130 000 532 72',
         ])
 
-    def test_chronopost(self):
-        # from: https://www.chronopost.fr/en/delivery/our-services/parcel-tracking
-        # also from experimental results
-        self.check_carrier('chronopost', [
-            'XU023645000FR',
-            'XY769000640200Y'
-        ])
-
     def test_dhl(self):
         # from: https://xmlpi-validation.dhl.com/serviceval/jsps/main/Main_menu.jsp
         self.check_carrier('dhl', [
             '8564385550'
+        ])
+
+    def test_purolator(self):
+        # from: https://www.trackingmore.com/tracking-status-detail-en-254.html
+        self.check_carrier('purolator', [
+            '332359073811',
+            '331426749957',
+            'KYV009956937',
+            'CGK002986959',
+            '331434972567',
+            '331435738942',
+            'JFV247545960',
+            'JFV247698458',
+            '331434463120',
+            '331432270063',
+            '331433946802',
+            'TLR000083964',
+            '331432012770',
+        ])
+
+    def test_australia_post(self):
+        # from: https://www.trackingmore.com/australia-post-tracking.html
+        # and: D2D test orders
+        self.check_carrier('australia_post', [
+            'LH211265976AU',  # normal Australia Post tracking ID
+            'PF8102906901000935003',  # shipped by Parcel Freight Logistics, URL works the same
+            'PF8102748601000935000',
+            'PF8102773201000965005',
+        ])
+
+    def test_royal_mail(self):
+        # from: https://www.royalmail.com/royal-mail-you/intellectual-property-rights/linking-our-website
+        # and: https://www.trackingmore.com/royal-mail-tracking.html
+        self.check_carrier('royal_mail', [
+            'ZW924750388GB',
+            'QP922433396GB',
         ])
