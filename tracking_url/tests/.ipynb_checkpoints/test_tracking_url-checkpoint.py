@@ -85,8 +85,3 @@ class GuessCarrierTestCase(TestCase):
         self.check_carrier('dhl', [
             '8564385550'
         ])
-
-	def test_spd(self):
-		self.check_carrier('spd', [
-            'SP001087260332596908'
-        ])
