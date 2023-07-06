@@ -17,3 +17,7 @@ tracking_url.egg-info/
 .idea/
 venv/
 .DS_Store
+
+# RTC
+.jupyter_ystore.db
+.ipynb_checkpoints

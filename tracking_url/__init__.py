@@ -76,7 +76,7 @@ TRACKING_PATTERNS = [
         [
             r'\d{10,11}'
         ]
-	),
+    ),
     TrackingPattern(
         'spd',
         'https://speedeedelivery.com/track-a-shipment/?v=detail&barcode={tracking_number}',
