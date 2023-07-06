@@ -75,5 +75,12 @@ TRACKING_PATTERNS = [
         'http://www.dhl.com/en/express/tracking.html?AWB={tracking_number}&brand=DHL',
         [
             r'\d{10,11}'
+        ]
+    ),
+    TrackingPattern(
+        'spd',
+        'https://speedeedelivery.com/track-a-shipment/?v=detail&barcode={tracking_number}',
+        [
+            r'SP\d{18}'
         ])
 ]
