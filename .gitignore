@@ -16,3 +16,4 @@ tracking_url.egg-info/
 # PyCharm
 .idea/
 venv/
+.DS_Store
